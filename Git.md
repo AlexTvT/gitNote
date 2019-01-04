@@ -101,6 +101,7 @@ git checkout --file.txt
 #git remote add [shortname] [url]
 git remote add origin <Clone with SSH>
 ```
+
 ### 查看当前的远程库
 
 ```
@@ -115,6 +116,13 @@ git remote -v
 
 ```
 git fetch [remote-name]
+
+git fetch origin
+git merge origin/master
+
+#等同于，:mater可以省略
+git pull origin master:master
+
 ```
 
 ### 推送数据到远程仓库
@@ -143,4 +151,36 @@ paul
 $ git remote rm paul
 $ git remote
 origin
+```
+
+## 分支管理
+
+### 新建分支
+
+```
+#新建分支兵切换到那个分支上，相当于
+#git branch iss53
+#git checkout iss53
+git checkout -b iss53
+```
+
+### 切换分支
+
+```
+#切换到master分支
+git checkout master
+```
+
+### 合并分支
+
+```
+git checkout master
+#将hotfix合并入分支，此时是Fast-forward合并
+git merge hotfix
+```
+
+### 删除分支
+
+```
+git branch -d hotfix
 ```
