@@ -79,3 +79,24 @@ git reset HEAD file.txt
 git checkout --file.txt
 ```
 
+## 远程仓库的使用
+
+> 安装ssh
+>
+> ```
+> sudo pacman -S openssh
+> ssh-keygen
+> cat ~/.ssh/*pub
+> #把cat的内容复制到你的github账号中的ssh公钥里。
+> ssh -T git@github.com
+> #看到hi+用户名表明设置成功。
+> ```
+>
+>
+
+在github中创建一个新的仓库，把新的远程仓库与本地仓库关联
+
+```
+git remote add origin <Clone with SSH>
+```
+
