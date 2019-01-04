@@ -94,9 +94,53 @@ git checkout --file.txt
 >
 >
 
+### 添加远程库
 在github中创建一个新的仓库，把新的远程仓库与本地仓库关联
 
 ```
+#git remote add [shortname] [url]
 git remote add origin <Clone with SSH>
 ```
+### 查看当前的远程库
 
+```
+#获取基本信息
+git remote
+
+#获取详细信息
+git remote -v
+```
+
+### 从远程库抓取信息
+
+```
+git fetch [remote-name]
+```
+
+### 推送数据到远程仓库
+
+把本地的 master 分支推送到 origin 服务器上
+
+```
+git push origin master
+```
+
+### 远程仓库的删除和重命名
+在新版 Git 中可以用 git remote rename命令修改某个远程仓库在本地的简称，比如想把 pb 改成 paul，可以这么运行：
+
+```
+$ git remote rename pb paul
+$ git remote
+origin
+paul
+```
+
+注意，对远程仓库的重命名，也会使对应的分支名称发生变化，原来的 pb/master 分支现在成了 paul/master。
+
+碰到远端仓库服务器迁移，或者原来的克隆镜像不再使用，又或者某个参与者不再贡献代码，那么需要移除对应的远端仓库，可以运行 git remote rm 命令：
+
+```
+$ git remote rm paul
+$ git remote
+origin
+```
