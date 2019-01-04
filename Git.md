@@ -55,4 +55,27 @@ git commit -m "加入file.txt"
 
 ```
 git log
+
+##显示最近2次改动的具体内容
+git log -p -2
+
+##显示改动的简要内容
+git -log --stat
+
+##只以一行显示
+git log --pretty=oneline
+
+git log --pretty=format:"%h - %an, %ar : %s"
 ```
+
+## git撤销操作
+
+```
+#修改最后一次提交
+git submit --amend
+#取消以暂存的文件
+git reset HEAD file.txt
+#取消对文件的修改
+git checkout --file.txt
+```
+
